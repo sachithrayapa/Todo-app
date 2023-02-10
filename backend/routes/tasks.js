@@ -12,7 +12,7 @@ router.get('/all-tasks', (req,res) =>{
     })
 })
 
-router.post('/create-task', (req, res) =>{
+router.post('/post', (req, res) =>{
     const task = new Task(req.body);
         task.save((err, savedTask) =>{
             if(err){
@@ -26,7 +26,7 @@ router.post('/create-task', (req, res) =>{
 // PUT request
 router.put('/update/:id', (req,res) => {
     Task.findByIdAndUpdate(req.params.id, req.body)
-    .then(task1 => res.json('Updated successfully'))
+    .then(task => res.json('Updated successfully'))
     .catch(err =>
       res.status(400).json({ error: err })
     );

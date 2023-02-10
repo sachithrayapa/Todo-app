@@ -7,7 +7,7 @@ const taskRoutes = require("./routes/tasks")
 
 const PORT = 4000;
 
-const dbUrl = "mongodb://localhost/todo";
+const dbUrl = "mongodb+srv://sachithra:abc123456@cluster0.9mshrfg.mongodb.net/?retryWrites=true&w=majority";
 
 const app = express();
 app.use(bodyParser.json());
@@ -26,39 +26,3 @@ app.listen(PORT, () =>{
     console.log("API server is running on PORT ${PORT}");
 });
 
-// app.get('/all-tasks', (req,res) =>{
-//     Task.find({}, (err, task) =>{
-//         if(err){
-//             return res.status(400).send(err);
-//         }
-//         res.send(task);
-//     })
-// })
-
-// app.post('/create-task', (req, res) =>{
-//     const task = new Task(req.body);
-//         task.save((err, savedTask) =>{
-//             if(err){
-//                 return res.status(400).send(err);
-//             }
-//             res.send(savedTask);
-
-//         })
-// })
-
-// // PUT request
-// app.put('/update/:id', (req,res) => {
-//     Task.findByIdAndUpdate(req.params.id, req.body)
-//     .then(task1 => res.json('Updated successfully'))
-//     .catch(err =>
-//       res.status(400).json({ error: err })
-//     );
-// })  
-
-
-// //Delete
-// app.delete('/dlt/:id', (req,res) =>{
-//     Task.findOneAndDelete((req.params.id), (err, docs) =>{
-//         res.send(docs);
-//     })
-// })
